@@ -37,7 +37,11 @@ public class EnemyLife : MonoBehaviour
          OnEmemyHealthChanged?.Invoke(0);
         gameObject.layer = LayerMask.NameToLayer("Default");
         col.enabled = false;
-        animator.enabled = false;
+        if(animator!=null)
+      {
+      animator.enabled = false;
+      }  
+        
         EventBus.EnemyDefeated();
     }
 
